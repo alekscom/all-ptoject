@@ -1,0 +1,40 @@
+git config --local user.name ”your name and surname”
+git config --local user.email ”your email address”
+
+git config --local --list
+
+git status   // 
+git add [files]
+
+git commit –m ”message”
+
+git log  // viewing commit history
+
+git remote -v               //showing remotes
+git remote add <name> <url>
+
+git fetch origin
+git pull
+
+git merge origin/master 
+
+echo "# roo" >> README.md
+git init
+git add README.md
+git clone
+git commit -m "first commit"
+git remote add origin https://github.com/gogol700/roo.git
+git push -u origin master
+
+git push origin master
+
+
+git branch <branch-name>
+git checkout <branch-name> // przelacz branches
+
+
+git log --oneline --graph --decorate --all
+
+git branch -a
+git branch b1
+git checkou
