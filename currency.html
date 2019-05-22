@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Currency</title>
+		<meta charset="UTF-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Currency</h1>
+		<button onclick="currency()">Pobierz KURS</button>
+        <p>EUR = <input  id="EUR" size="7"></p>
+        <p>USD = <input  id="USD" size="7"></p>
+        <p>GBP = <input  id="GBP" size="7"></p>
+        <p>CHF = <input  id="CHF" size="7"></p>
+		
+		<script>
+            var USD = document.getElementById("USD");
+            var EUR = document.getElementById("EUR");
+            var GBP = document.getElementById("GBP");
+            var CHF = document.getElementById("CHF");
+            function currency(){
+            
+                $.getJSON('http://api.nbp.pl/api/exchangerates/rates/a/usd/today/', function(data){
+                    USD.value = data.rates[0].mid
+                        
+                });
+                $.getJSON('http://api.nbp.pl/api/exchangerates/rates/a/eur/today/', function(data){
+                    EUR.value = data.rates[0].mid
+                        
+                });
+                $.getJSON('http://api.nbp.pl/api/exchangerates/rates/a/gbp/today/', function(data){
+                    GBP.value = data.rates[0].mid
+                       
+                });
+                $.getJSON('http://api.nbp.pl/api/exchangerates/rates/a/chf/today/', function(data){
+                    CHF.value = data.rates[0].mid
+                        
+                });
+                
+            };
+			
+		</script>
+	</body>
+</html>

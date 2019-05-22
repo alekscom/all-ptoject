@@ -1,0 +1,16 @@
+<html>
+
+<script>
+    
+    var db = openDatabase('userdb', '1.0', 'User DB', 2 * 1024 * 1024);
+    
+    db.transaction(function (tx) {   
+        tx.executeSql('CREATE TABLE IF NOT EXISTS users (name, surname, age, username unique, email)'); 
+        tx.executeSql("insert into users (name, surname, age, username, email) values ('Beverly', 'Bell', 35, 'bbell0', 'bbell0@storify.com');");
+        tx.executeSql("insert into users (name, surname, age, username, email) values ('Jane', 'Fields', 35, 'jfields1', 'jfields1@privacy.gov.au');");
+        tx.executeSql("insert into users (name, surname, age, username, email) values ('Jane', 'Simmons', 25, 'jsimmons2', 'jsimmons2@discovery.com');");
+        tx.executeSql("insert into users (name, surname, age, username, email) values ('Russell', 'Garrett', 35, 'rgarrett3', 'rgarrett3@php.net');");
+        tx.executeSql("insert into users (name, surname, age, username, email) values ('Lori', 'Dixon', 23, 'ldixon4', 'ldixon4@myspace.com');");
+});
+</script>
+</html>
